@@ -1,82 +1,36 @@
-AI Body Classifier and Workout Engine
-An AI-powered application that analyzes body types (somatotypes) using machine learning and generates highly personalized workout routines.
+# AI Body Classifier & Workout Engine 🏋️‍♂️🤖
 
-🚀 Features
-AI Somatotype Classification: Utilizes a trained deep learning model (somatotype_model.h5) to classify users into distinct body types (Ectomorph, Mesomorph, Endomorph).
+An end-to-end, AI-powered fitness application that classifies body somatotypes using deep learning models and dynamically generates customized workout plans based on individual physical characteristics and fitness goals.
 
-Personalized Workout Engine: Dynamically generates targeted workout plans based on the user's classified body type and fitness goals.
+---
 
-Full-Stack Integration: A seamless architecture combining a Python-based machine learning backend with a robust JavaScript frontend.
+## 🌟 Key Features
 
-Database Management: Built-in SQL schema integration for tracking user data and generated routines.
+* **AI Somatotype Classification**: Uses a custom-trained Keras model (`somatotype_model.h5`) to analyze body profiles and classify them into core somatotypes (**Ectomorph**, **Mesomorph**, **Endomorph**).
+* **Personalized Workout Engine**: Custom algorithms mapping exercise regimens (`exercises.py`) to classified body types for optimized training results.
+* **Full-Stack Architecture**: Lightweight Python backend paired with a dynamic JavaScript frontend.
+* **Database Management**: Built-in SQL schema integration (`schema.sql`) for persistence of user profiles, classification history, and generated routines.
 
-🛠️ Tech Stack
-Machine Learning: TensorFlow/Keras (Python)
+---
 
-Backend: Python (main.py, exercises.py)
+## 🛠️ Tech Stack
 
-Frontend: JavaScript / Node.js (soma-frontend directory)
+* **Frontend**: JavaScript, Node.js (`soma-frontend`)
+* **Backend**: Python 3.8+ (`main.py`, `exercises.py`, `schemas.py`)
+* **Machine Learning**: TensorFlow / Keras (`somatotype_model.h5`)
+* **Data Validation**: Pydantic (`schemas.py`)
+* **Database**: SQL (`schema.sql`)
 
-Database: SQL (schema.sql)
+---
 
-📂 Project Structure
-soma-frontend/: Contains the frontend user interface and JavaScript logic.
+## 📂 Project Structure
 
-main.py: The core backend application server handling API requests and model inference.
-
-exercises.py: Contains the logic and data structures for mapping workouts to specific body types.
-
-somatotype_model.h5: The pre-trained Keras model used for body classification.
-
-schema.sql: The database schema for initializing the required tables.
-
-schemas.py: Pydantic/Data validation schemas for backend API requests and responses.
-
-💻 Installation & Setup
-Prerequisites
-Python 3.8+
-
-Node.js & npm
-
-A SQL database server (e.g., PostgreSQL, MySQL, or SQLite depending on configuration)
-
-1. Clone the Repository
-Bash
-git clone https://github.com/princesingh47852/AI-body-classifier-and-workout-engine.git
-cd AI-body-classifier-and-workout-engine
-2. Backend Setup
-Set up your Python virtual environment and install dependencies.
-
-Bash
-python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-# Install requirements (Assuming standard setup)
-pip install -r requirements.txt 
-Initialize the database using the provided schema:
-
-Bash
-# Example for SQLite or PostgreSQL
-psql -d your_db_name -f schema.sql 
-Run the backend server:
-
-Bash
-python main.py
-3. Frontend Setup
-Navigate to the frontend directory and install the required Node modules.
-
-Bash
-cd soma-frontend
-npm install
-npm start
-🤝 Contributing
-We welcome contributions! To contribute:
-
-Fork the repository.
-
-Create a new branch (git checkout -b feature/AmazingFeature).
-
-Commit your changes (git commit -m 'Add some AmazingFeature').
-
-Push to the branch (git push origin feature/AmazingFeature).
-
-Open a Pull Request.
+```text
+├── soma-frontend/         # Frontend application UI & client logic
+├── main.py                # Core API backend server & model inference handler
+├── exercises.py           # Workout logic and somatotype exercise mapping
+├── schemas.py             # Pydantic data schemas for request/response validation
+├── schema.sql             # Database schema initialization script
+├── somatotype_model.h5    # Pre-trained deep learning model for body classification
+├── SOMA_project_report.md # Detailed technical report and architecture notes
+└── README.md              # Project documentation
